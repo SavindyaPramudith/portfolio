@@ -1,0 +1,40 @@
+.footer {
+  background: var(--bg-primary);
+  padding: 2rem;
+  border-top: 1px solid var(--border);
+}
+
+.footer-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  text-align: center;
+}
+
+.footer-text {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+}
+
+.footer-credit {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  color: var(--text-muted);
+  font-size: 0.875rem;
+}
+
+.heart-icon {
+  color: #ef4444;
+  animation: heartbeat 1.5s ease infinite;
+}
+
+@keyframes heartbeat {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+}
