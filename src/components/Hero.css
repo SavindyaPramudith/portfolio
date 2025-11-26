@@ -8,6 +8,7 @@
   justify-content: center;
   overflow: hidden;
   padding: 6rem 2rem 2rem;
+  background: linear-gradient(135deg, var(--bg-primary), rgba(99, 102, 241, 0.03));
 }
 
 .hero-background {
@@ -24,82 +25,37 @@
 .gradient-orb {
   position: absolute;
   border-radius: 50%;
-  opacity: 0.15;
-  filter: blur(80px);
-  animation: float 20s ease-in-out infinite;
+  opacity: 0.08;
+  filter: blur(60px);
 }
 
 .orb-1 {
-  width: 400px;
-  height: 400px;
-  background: linear-gradient(135deg, var(--accent), #06b6d4);
-  top: -200px;
-  right: -200px;
-  animation-delay: 0s;
+  width: 300px;
+  height: 300px;
+  background: var(--accent);
+  top: -100px;
+  right: -100px;
 }
 
 .orb-2 {
-  width: 300px;
-  height: 300px;
-  background: linear-gradient(135deg, var(--accent-secondary), #ec4899);
-  bottom: -150px;
-  left: -150px;
-  animation-delay: 3s;
+  width: 250px;
+  height: 250px;
+  background: var(--accent-secondary);
+  bottom: -80px;
+  left: -80px;
 }
 
 .orb-3 {
-  width: 250px;
-  height: 250px;
-  background: linear-gradient(135deg, var(--accent-tertiary), #f59e0b);
+  width: 200px;
+  height: 200px;
+  background: var(--accent-tertiary);
   top: 50%;
-  left: 50%;
-  animation-delay: 6s;
-  transform: translate(-50%, -50%);
-}
-
-@keyframes float {
-  0%, 100% {
-    transform: translate(0, 0);
-  }
-  50% {
-    transform: translate(30px, -30px);
-  }
+  left: 10%;
 }
 
 /* Particles */
 .particles {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-}
-
-.particle {
-  position: absolute;
-  width: 4px;
-  height: 4px;
-  background: var(--accent);
-  border-radius: 50%;
-  opacity: 0.4;
-  animation: float-particle linear infinite;
-}
-
-@keyframes float-particle {
-  0% {
-    opacity: 0;
-    transform: translateY(100vh) scale(1);
-  }
-  10% {
-    opacity: 0.6;
-  }
-  90% {
-    opacity: 0.6;
-  }
-  100% {
-    opacity: 0;
-    transform: translateY(-100vh) scale(0);
-  }
+  display: none;
 }
 
 /* Hero Content */
@@ -138,7 +94,6 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  perspective: 1000px;
 }
 
 .hero-image {
@@ -148,8 +103,7 @@
   aspect-ratio: 1;
   border-radius: 20px;
   object-fit: cover;
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-  animation: float 6s ease-in-out infinite;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
   position: relative;
   z-index: 2;
   border: 4px solid var(--bg-secondary);
@@ -157,7 +111,7 @@
 }
 
 .hero-image:hover {
-  box-shadow: 0 30px 80px rgba(99, 102, 241, 0.4);
+  box-shadow: 0 30px 80px rgba(99, 102, 241, 0.25);
   transform: translateY(-10px);
 }
 
@@ -167,10 +121,9 @@
   width: 100%;
   max-width: 400px;
   aspect-ratio: 1;
-  border: 3px solid var(--accent);
+  border: 2px solid var(--accent);
   border-radius: 20px;
-  opacity: 0.3;
-  animation: spin 8s linear infinite;
+  opacity: 0.2;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -179,17 +132,7 @@
 .image-ring.ring-2 {
   max-width: 420px;
   border-color: var(--accent-secondary);
-  animation: spin 12s linear infinite reverse;
-  opacity: 0.15;
-}
-
-@keyframes spin {
-  from {
-    transform: translate(-50%, -50%) rotate(0deg);
-  }
-  to {
-    transform: translate(-50%, -50%) rotate(360deg);
-  }
+  opacity: 0.1;
 }
 
 /* Status badge */
@@ -374,14 +317,6 @@
   box-shadow: 0 20px 50px rgba(99, 102, 241, 0.4);
 }
 
-.social-link svg {
-  transition: var(--transition);
-}
-
-.social-link:hover svg {
-  transform: scale(1.1);
-}
-
 /* CTA Buttons */
 .hero-cta {
   display: flex;
@@ -472,14 +407,6 @@
   color: var(--accent);
 }
 
-.scroll-indicator svg {
-  transition: var(--transition);
-}
-
-.scroll-indicator:hover svg {
-  animation: bounce 1s ease-in-out infinite;
-}
-
 /* Responsive Design */
 @media (max-width: 968px) {
   .hero-content {
@@ -492,21 +419,8 @@
     max-width: 280px;
   }
 
-  .image-ring {
-    max-width: 300px;
-  }
-
-  .image-ring.ring-2 {
-    max-width: 320px;
-  }
-
   .hero-name {
     font-size: 2.5rem;
-  }
-
-  .hero-title {
-    font-size: 1.2rem;
-    height: 2rem;
   }
 
   .hero-cta {
@@ -517,13 +431,6 @@
   .btn {
     width: 100%;
     justify-content: center;
-  }
-
-  .status-badge {
-    bottom: 10px;
-    right: 0;
-    font-size: 0.8rem;
-    padding: 10px 16px;
   }
 }
 
@@ -545,26 +452,8 @@
     font-size: 1rem;
   }
 
-  .hero-social {
-    gap: 0.75rem;
-  }
-
-  .social-link {
-    width: 45px;
-    height: 45px;
-  }
-
-  .social-link svg {
-    width: 20px;
-    height: 20px;
-  }
-
   .btn {
     padding: 12px 20px;
     font-size: 0.95rem;
-  }
-
-  .orb-1, .orb-2, .orb-3 {
-    display: none;
   }
 }
