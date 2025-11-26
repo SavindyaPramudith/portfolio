@@ -8,7 +8,7 @@ export const personalInfo = {
   email: 'savindyapramudith@gmail.com',
   phone: '+94 775318474',
   location: 'No 13/1 A Wewalwala Road, Bataganwila, Galle, Sri Lanka',
-  profileImage: 'https://github.com/SavindyaPramudith.png',
+  profileImage: 'https://avatars.githubusercontent.com/u/142539717?s=400&u=67dfb425b5b3c52a94a11e7f29cd9bbbf1648e26&v=4',
 };
 
 export const socialLinks: SocialLink[] = [
@@ -19,7 +19,7 @@ export const socialLinks: SocialLink[] = [
   },
   {
     name: 'LinkedIn',
-    url: 'https://www.linkedin.com/in/savindya-pramudith-1b63a9252',
+    url: 'https://linkedin.com/in/savindya-pramudith',
     icon: 'linkedin',
   },
   {
@@ -170,6 +170,25 @@ export const certificates = [
     name: 'SQL Intermediate Certification',
     issuer: 'HackerRank',
     year: '2024',
+  },
+];
+
+export const references = [
+  {
+    id: 1,
+    name: 'Ms. Thilini Dharmasena',
+    title: 'Lecturer / Consultant',
+    organization: 'NIBM',
+    phone: '+94 70 229 8113',
+    email: 'thilinid@nibm.lk',
+  },
+  {
+    id: 2,
+    name: 'Mr. Ranuka De Silva',
+    title: 'Cloud Infrastructure Specialist',
+    organization: 'Carlson Marketing Solutions',
+    phone: '+94 71 210 6384',
+    email: 'ranuka@outlook.com',
   },
 ];
 
