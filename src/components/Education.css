@@ -1,5 +1,6 @@
 .education {
   background: var(--bg-primary);
+  position: relative;
 }
 
 .timeline {
@@ -40,21 +41,21 @@
   top: 0;
   width: 48px;
   height: 48px;
-  background: linear-gradient(135deg, var(--accent), var(--accent-secondary));
-  border-radius: 50%;
+  background: var(--accent);
+  border-radius: 16px;
   display: flex;
   align-items: center;
   justify-content: center;
   color: white;
   z-index: 2;
-  box-shadow: 0 4px 20px rgba(var(--accent-rgb), 0.4);
-  transition: all 0.3s ease;
+  box-shadow: var(--shadow-md);
+  transition: var(--transition);
 }
 
 .marker-pulse {
   position: absolute;
   inset: -4px;
-  border-radius: 50%;
+  border-radius: 20px;
   border: 2px solid var(--accent);
   animation: pulse-ring 2s ease infinite;
   opacity: 0;
@@ -77,7 +78,7 @@
 
 .timeline-item:hover .timeline-marker {
   transform: scale(1.1);
-  box-shadow: 0 8px 30px rgba(var(--accent-rgb), 0.5);
+  box-shadow: var(--shadow-lg);
 }
 
 .timeline-line {
@@ -94,7 +95,7 @@
   padding: 1.75rem;
   border-radius: 20px;
   border: 1px solid var(--border);
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: var(--transition);
   position: relative;
   overflow: hidden;
 }
@@ -104,9 +105,9 @@
   position: absolute;
   top: 0;
   left: 0;
-  width: 4px;
+  width: 3px;
   height: 100%;
-  background: linear-gradient(to bottom, var(--accent), var(--accent-secondary));
+  background: var(--accent);
   opacity: 0;
   transition: opacity 0.3s ease;
 }
@@ -114,7 +115,7 @@
 .timeline-content:hover {
   border-color: var(--accent);
   transform: translateX(8px);
-  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+  box-shadow: var(--shadow-md);
 }
 
 .timeline-content:hover::before {
@@ -124,12 +125,12 @@
 .timeline-period {
   display: inline-flex;
   align-items: center;
-  font-size: 0.85rem;
+  font-size: 0.8rem;
   color: white;
   font-weight: 600;
   margin-bottom: 0.75rem;
-  padding: 0.35rem 1rem;
-  background: linear-gradient(135deg, var(--accent), var(--accent-secondary));
+  padding: 0.4rem 1rem;
+  background: var(--accent);
   border-radius: 20px;
 }
 
@@ -137,7 +138,7 @@
   font-size: 1.2rem;
   color: var(--text-primary);
   margin-bottom: 0.35rem;
-  font-weight: 600;
+  font-weight: 700;
 }
 
 .timeline-institution {
@@ -161,6 +162,7 @@
   .timeline-marker {
     width: 40px;
     height: 40px;
+    border-radius: 14px;
   }
 
   .timeline-line {

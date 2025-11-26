@@ -1,5 +1,6 @@
 .skills {
   background: var(--bg-primary);
+  position: relative;
 }
 
 .skills-grid {
@@ -29,7 +30,7 @@
   padding: 2rem;
   border-radius: 24px;
   border: 1px solid var(--border);
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: var(--transition);
   opacity: 0;
   position: relative;
   overflow: hidden;
@@ -41,14 +42,14 @@
   top: 0;
   left: 0;
   width: 100%;
-  height: 4px;
-  background: linear-gradient(90deg, var(--accent), var(--accent-secondary), var(--accent-tertiary));
+  height: 3px;
+  background: linear-gradient(90deg, var(--accent), var(--accent-secondary));
 }
 
 .skill-category:hover {
   border-color: var(--accent);
   transform: translateY(-8px);
-  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+  box-shadow: var(--shadow-lg);
 }
 
 .category-header {
@@ -59,24 +60,26 @@
 }
 
 .category-icon {
-  width: 50px;
-  height: 50px;
-  border-radius: 14px;
+  width: 52px;
+  height: 52px;
+  border-radius: 16px;
   display: flex;
   align-items: center;
   justify-content: center;
   color: white;
-  transition: transform 0.3s ease;
+  transition: var(--transition);
+  box-shadow: var(--shadow-sm);
 }
 
 .skill-category:hover .category-icon {
-  transform: scale(1.1) rotate(5deg);
+  transform: scale(1.1);
 }
 
 .category-header h3 {
-  font-size: 1.25rem;
+  font-size: 1.2rem;
   color: var(--text-primary);
-  font-weight: 600;
+  font-weight: 700;
+  letter-spacing: -0.01em;
 }
 
 .skill-list {
@@ -104,32 +107,34 @@
 }
 
 .skill-level {
-  font-size: 0.875rem;
+  font-size: 0.8rem;
   color: var(--accent);
   font-weight: 600;
   background: rgba(var(--accent-rgb), 0.1);
-  padding: 0.2rem 0.6rem;
+  padding: 0.25rem 0.75rem;
   border-radius: 20px;
+  border: 1px solid rgba(var(--accent-rgb), 0.2);
 }
 
 .skill-bar {
-  height: 10px;
+  height: 8px;
   background: var(--bg-primary);
-  border-radius: 10px;
+  border-radius: 8px;
   overflow: hidden;
   position: relative;
+  border: 1px solid var(--border);
 }
 
 .skill-progress {
   height: 100%;
   background: linear-gradient(90deg, var(--accent), var(--accent-secondary));
-  border-radius: 10px;
+  border-radius: 8px;
   width: 0;
   position: relative;
 }
 
 .skill-progress.animate {
-  animation: progressFill 1s ease forwards;
+  animation: progressFill 1.2s ease forwards;
 }
 
 @keyframes progressFill {
@@ -151,10 +156,10 @@
   background: linear-gradient(
     90deg,
     transparent,
-    rgba(255, 255, 255, 0.4),
+    rgba(255, 255, 255, 0.3),
     transparent
   );
-  animation: shimmer 2s infinite;
+  animation: shimmer 2.5s infinite;
 }
 
 @keyframes shimmer {

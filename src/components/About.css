@@ -1,5 +1,16 @@
 .about {
   background: var(--bg-secondary);
+  position: relative;
+}
+
+.about::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--border), transparent);
 }
 
 .about-content {
@@ -31,13 +42,17 @@
 .about-image img {
   width: 100%;
   max-width: 350px;
-  border-radius: 20px;
-  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.15);
-  transition: transform 0.4s ease;
+  border-radius: 24px;
+  box-shadow: var(--shadow-xl);
+  transition: var(--transition);
+  filter: grayscale(30%);
+  border: 1px solid var(--border);
 }
 
 .about-image img:hover {
-  transform: scale(1.02) rotate(1deg);
+  transform: scale(1.02);
+  filter: grayscale(0%);
+  box-shadow: var(--shadow-glow);
 }
 
 .about-image-decoration {
@@ -46,17 +61,17 @@
   left: 20px;
   right: -20px;
   bottom: -20px;
-  border: 3px solid var(--accent);
-  border-radius: 20px;
+  border: 2px solid var(--border);
+  border-radius: 24px;
   z-index: -1;
-  transition: all 0.4s ease;
+  transition: var(--transition);
 }
 
 .about-image-decoration.dec-2 {
   top: 40px;
   left: 40px;
-  border-color: var(--accent-secondary);
-  opacity: 0.5;
+  border-color: var(--accent-tertiary);
+  opacity: 0.3;
 }
 
 .about-image:hover .about-image-decoration {
@@ -67,9 +82,10 @@
 .certificates-card {
   background: var(--bg-primary);
   padding: 1.5rem;
-  border-radius: 16px;
+  border-radius: 20px;
   border: 1px solid var(--border);
   max-width: 350px;
+  box-shadow: var(--shadow-sm);
 }
 
 .certificates-card h4 {
@@ -78,7 +94,8 @@
   gap: 0.5rem;
   color: var(--accent);
   margin-bottom: 1rem;
-  font-size: 1rem;
+  font-size: 0.95rem;
+  font-weight: 600;
 }
 
 .certificates-card ul {
@@ -93,6 +110,12 @@
   flex-direction: column;
   padding-left: 1rem;
   border-left: 2px solid var(--accent);
+  transition: var(--transition);
+}
+
+.certificates-card li:hover {
+  border-left-color: var(--text-primary);
+  padding-left: 1.25rem;
 }
 
 .cert-name {
@@ -112,6 +135,7 @@
   color: var(--text-primary);
   position: relative;
   display: inline-block;
+  font-weight: 700;
 }
 
 .about-text h3::after {
@@ -119,9 +143,9 @@
   position: absolute;
   bottom: -5px;
   left: 0;
-  width: 60px;
+  width: 50px;
   height: 3px;
-  background: linear-gradient(90deg, var(--accent), var(--accent-secondary));
+  background: var(--accent);
   border-radius: 2px;
 }
 
@@ -141,10 +165,10 @@
 
 .highlight-card {
   background: var(--bg-primary);
-  padding: 1.25rem;
-  border-radius: 16px;
+  padding: 1.5rem;
+  border-radius: 20px;
   text-align: center;
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: var(--transition);
   border: 1px solid var(--border);
   position: relative;
   overflow: hidden;
@@ -157,39 +181,40 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(135deg, var(--accent), var(--accent-secondary));
+  background: var(--accent);
   opacity: 0;
   transition: opacity 0.4s ease;
   z-index: 0;
 }
 
 .highlight-card:hover {
-  transform: translateY(-8px) scale(1.02);
+  transform: translateY(-8px);
   border-color: var(--accent);
-  box-shadow: 0 20px 40px rgba(var(--accent-rgb), 0.2);
+  box-shadow: var(--shadow-lg);
 }
 
 .highlight-card:hover::before {
-  opacity: 0.05;
+  opacity: 0.03;
 }
 
 .highlight-icon {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 52px;
-  height: 52px;
-  border-radius: 14px;
-  background: linear-gradient(135deg, var(--accent), var(--accent-secondary));
+  width: 56px;
+  height: 56px;
+  border-radius: 16px;
+  background: var(--accent);
   color: white;
-  margin-bottom: 0.75rem;
+  margin-bottom: 1rem;
   position: relative;
   z-index: 1;
-  transition: transform 0.3s ease;
+  transition: var(--transition);
 }
 
 .highlight-card:hover .highlight-icon {
-  transform: scale(1.1) rotate(5deg);
+  transform: scale(1.1);
+  box-shadow: var(--shadow-md);
 }
 
 .highlight-card h4 {
@@ -198,6 +223,7 @@
   margin-bottom: 0.25rem;
   position: relative;
   z-index: 1;
+  font-weight: 600;
 }
 
 .highlight-card p {
@@ -213,7 +239,7 @@
   gap: 1rem;
   padding: 1.5rem;
   background: var(--bg-primary);
-  border-radius: 16px;
+  border-radius: 20px;
   border: 1px solid var(--border);
 }
 
@@ -221,6 +247,13 @@
   display: flex;
   align-items: flex-start;
   gap: 1rem;
+  transition: var(--transition);
+  padding: 0.5rem;
+  border-radius: 12px;
+}
+
+.info-item:hover {
+  background: var(--bg-secondary);
 }
 
 .info-item svg {
@@ -235,11 +268,12 @@
 }
 
 .info-label {
-  font-size: 0.75rem;
+  font-size: 0.7rem;
   color: var(--text-muted);
   text-transform: uppercase;
   letter-spacing: 1px;
   margin-bottom: 0.1rem;
+  font-weight: 500;
 }
 
 .info-value {
